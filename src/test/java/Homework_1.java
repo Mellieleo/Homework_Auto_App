@@ -1,3 +1,4 @@
+
 import io.appium.java_client.*;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,32 +31,32 @@ public class Homework_1 {
 
     @Test
     public void CheckEmptyEmail() throws Exception {
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement loginMenuButton = (MobileElement) driver.findElementByAccessibilityId("Login");
         loginMenuButton.click();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement passForm = (MobileElement) driver.findElementByAccessibilityId("input-password");
         passForm.sendKeys(SECURE_PASS);
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement loginButton = (MobileElement) driver.findElementByAccessibilityId("button-LOGIN");
         loginButton.click();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement errorText = (MobileElement) driver.findElementByXPath(XPASS_LOGIN);
         Assert.assertEquals(errorText.getText(), LOGIN_EXPECTED);
     }
 
     @Test
     public void CheckDropdownForm () throws Exception {
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement formsMenu = (MobileElement) driver.findElementByAccessibilityId("Forms");
         formsMenu.click();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement dropForm = (MobileElement) driver.findElementByAccessibilityId("select-Dropdown");
         dropForm.click();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement selectVar = (MobileElement) driver.findElementByXPath(DROP_XPATH);
         selectVar.click();
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         MobileElement filledForm = (MobileElement) driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\"select-Dropdown\"]/android.widget.TextView[2]");
         Assert.assertEquals(filledForm.getText(), DROPDOWN_EXPECTED);
     }
@@ -64,6 +65,4 @@ public class Homework_1 {
     void tearDown() {
         driver.quit();
     }
-
-    //
 }
